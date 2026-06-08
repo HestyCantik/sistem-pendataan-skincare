@@ -13,6 +13,7 @@ class ProdukSkincare extends Model
         'merek',
         'jenis_produk',
         'harga',
-        'stok'
+        'stok',
+        'tanggal_kadaluarsa'
     ];
 }

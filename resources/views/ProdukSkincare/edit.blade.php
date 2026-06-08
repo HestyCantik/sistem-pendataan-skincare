@@ -54,6 +54,13 @@
                    value="{{ $data->stok }}">
         </div>
 
+        <div class="mb-3">
+            <label>Tanggal Kadaluarsa</label>
+            <input type="date"
+                   name="tanggal_kadaluarsa"
+                   class="form-control"
+                   value="{{ $data->tanggal_kadaluarsa }}">
+        </div>
         <button type="submit" class="btn btn-warning">
             Update
         </button>

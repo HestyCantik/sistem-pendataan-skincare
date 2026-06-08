@@ -52,12 +52,25 @@
 <div class="container mt-5">
 
     <div class="header-card p-4 mb-4 text-center shadow">
-        <h1>💄 Sistem Pendataan Produk Skincare</h1>
-        <p class="mb-0">Kelola data produk skincare dengan mudah</p>
-    </div>
+        <h1>💄Glow Beauty Management System</h1>
+        <p class="mb-0">Sistem Pendataan Produk Skincare</p>
+</div>
+ 
+    <div class="mb-3">
+    <a href="/produk" class="btn btn-primary">Produk</a>
+    <a href="/brand" class="btn btn-success">Brand</a>
+    <a href="/supplier" class="btn btn-warning">Supplier</a>
+    <a href="/pelanggan" class="btn btn-info">Pelanggan</a>
+</div>
 
     <div class="table-container">
 
+    <input type="text"
+               id="cariProduk"
+               class="form-control mb-3"
+               placeholder="🔍 Cari Produk...">
+
+    
         <a href="/produk/create" class="btn btn-tambah mb-3">
             ➕ Tambah Produk
         </a>
@@ -72,6 +85,7 @@
                     <th>Jenis Produk</th>
                     <th>Harga</th>
                     <th>Stok</th>
+                    <th>Kadaluarsa</th>
                     <th width="180">Aksi</th>
                 </tr>
             </thead>
@@ -87,6 +101,7 @@
                     <td>{{ $item->jenis_produk }}</td>
                     <td>Rp {{ number_format($item->harga,0,',','.') }}</td>
                     <td>{{ $item->stok }}</td>
+                    <td>{{ $item->tanggal_kadaluarsa }}</td>
 
                     <td class="text-center">
 

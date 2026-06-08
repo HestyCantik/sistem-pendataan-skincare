@@ -38,7 +38,12 @@
             <label>Stok</label>
             <input type="number" name="stok" class="form-control">
         </div>
-
+        <div class="mb-3">
+            <label>Tanggal Kadaluarsa</label>
+            <input type="date"
+           name="tanggal_kadaluarsa"
+           class="form-control">
+        </div> 
         <button type="submit" class="btn btn-success">
             Simpan
         </button>

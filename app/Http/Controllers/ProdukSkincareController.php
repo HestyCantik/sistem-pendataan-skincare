@@ -27,6 +27,7 @@ class ProdukSkincareController extends Controller
             'jenis_produk' => 'required',
             'harga' => 'required',
             'stok' => 'required',
+             'tanggal_kadaluarsa' => $request->tanggal_kadaluarsa
         ]);
 
         ProdukSkincare::create($request->all());
