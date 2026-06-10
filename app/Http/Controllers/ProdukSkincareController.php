@@ -4,14 +4,26 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\ProdukSkincare;
+use App\Models\Brand;
+use App\Models\Supplier;
+use App\Models\Pelanggan;
 
 class ProdukSkincareController extends Controller
 {
     public function index()
     {
         $data = ProdukSkincare::all();
+        
+         $totalBrand = Brand::count();
+         $totalSupplier = Supplier::count();
+         $totalPelanggan = Pelanggan::count();
 
-        return view('ProdukSkincare.index', compact('data'));
+        return view('ProdukSkincare.index', compact(
+    'data',
+    'totalBrand',
+    'totalSupplier',
+    'totalPelanggan'
+));
     }
 
     public function create()
@@ -22,14 +34,14 @@ class ProdukSkincareController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nama_produk' => 'required',
-            'merek' => 'required',
-            'jenis_produk' => 'required',
-            'harga' => 'required',
-            'stok' => 'required',
-             'tanggal_kadaluarsa' => $request->tanggal_kadaluarsa
-        ]);
-
+    'nama_produk' => 'required',
+    'merek' => 'required',
+    'jenis_produk' => 'required',
+    'harga' => 'required',
+    'stok' => 'required',
+    'tanggal_masuk' => 'required|date',
+    'tanggal_kadaluarsa' => 'required|date'
+]);
         ProdukSkincare::create($request->all());
 
         return redirect('/produk');

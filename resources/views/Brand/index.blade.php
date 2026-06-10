@@ -74,7 +74,7 @@
         <a href="/produk" class="btn menu-btn">💄 Produk</a>
         <a href="/brand" class="btn menu-btn">🏷️ Brand</a>
         <a href="/supplier" class="btn menu-btn">🚚 Supplier</a>
-        <a href="/pelanggan" class="btn menu-btn">👤 Pelanggan</a>
+        <a href="/pelanggan" class="btn menu-btn">👤 Pelanggan Tetap</a>
     </div>
 
     <div class="table-container">

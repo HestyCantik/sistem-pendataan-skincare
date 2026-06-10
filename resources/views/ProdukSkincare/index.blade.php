@@ -53,16 +53,73 @@
 
     <div class="header-card p-4 mb-4 text-center shadow">
         <h1>💄Glow Beauty Management System</h1>
-        <p class="mb-0">Sistem Pendataan Produk Skincare</p>
+        <p class="mb-0">Sistem Pendataan Produk Skincare pada Toko Glow Beauty</p>
+         <p class="mb-2">
+        Mengelola data produk, brand, supplier, dan pelanggan tetap
+    </p>
+
+    <hr style="color:white;">
+
+    <p class="mb-1">
+        📍 Alamat : Jl. Mawar No. 10, Makassar
+    </p>
+
+    <p class="mb-1">
+        📞 Telepon : 0812-3456-7890
+    </p>
+
+    <p class="mb-0">
+        🕒 Jam Operasional : 08.00 - 21.00 WITA
+    </p>
 </div>
+
  
+
     <div class="mb-3">
     <a href="/produk" class="btn btn-primary">Produk</a>
     <a href="/brand" class="btn btn-success">Brand</a>
     <a href="/supplier" class="btn btn-warning">Supplier</a>
-    <a href="/pelanggan" class="btn btn-info">Pelanggan</a>
+    <a href="/pelanggan" class="btn btn-info">Pelanggan Tetap</a>
 </div>
+    <div class="row mb-4">
 
+    <div class="col-md-3">
+        <div class="card shadow border-0">
+            <div class="card-body text-center">
+                <h5>📦 Produk</h5>
+                <h3>{{ count($data) }}</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card shadow border-0">
+            <div class="card-body text-center">
+                <h5>🏷️ Brand</h5>
+                <h3>{{ $totalBrand }}</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card shadow border-0">
+            <div class="card-body text-center">
+                <h5>🚚 Supplier</h5>
+                <h3>{{ $totalSupplier }}</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="card shadow border-0">
+            <div class="card-body text-center">
+                <h5>👤 Pelanggan Tetap</h5>
+                <h3>{{ $totalPelanggan }}</h3>
+            </div>
+        </div>
+    </div>
+
+</div>
     <div class="table-container">
 
     <input type="text"
@@ -85,6 +142,7 @@
                     <th>Jenis Produk</th>
                     <th>Harga</th>
                     <th>Stok</th>
+                    <th>Tanggal Masuk</th>
                     <th>Kadaluarsa</th>
                     <th width="180">Aksi</th>
                 </tr>
@@ -101,6 +159,7 @@
                     <td>{{ $item->jenis_produk }}</td>
                     <td>Rp {{ number_format($item->harga,0,',','.') }}</td>
                     <td>{{ $item->stok }}</td>
+                    <td>{{ $item->tanggal_masuk }}</td>
                     <td>{{ $item->tanggal_kadaluarsa }}</td>
 
                     <td class="text-center">
@@ -135,7 +194,27 @@
                 </tr>
 
                 @endforelse
+                  <script>
+document.getElementById('cariProduk').addEventListener('keyup', function() {
 
+    let filter = this.value.toLowerCase();
+
+    let rows = document.querySelectorAll('tbody tr');
+
+    rows.forEach(function(row) {
+
+        let text = row.textContent.toLowerCase();
+
+        if(text.includes(filter)) {
+            row.style.display = '';
+        } else {
+            row.style.display = 'none';
+        }
+
+    });
+
+});
+</script>
             </tbody>
 
         </table>

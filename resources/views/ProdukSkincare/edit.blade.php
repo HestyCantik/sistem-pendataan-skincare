@@ -55,6 +55,14 @@
         </div>
 
         <div class="mb-3">
+            <label>Tanggal Masuk Barang</label>
+            <input type="date"
+                   name="tanggal_masuk"
+                   class="form-control"
+                   value="{{ $data->tanggal_masuk }}">
+       </div>
+  
+        <div class="mb-3">
             <label>Tanggal Kadaluarsa</label>
             <input type="date"
                    name="tanggal_kadaluarsa"

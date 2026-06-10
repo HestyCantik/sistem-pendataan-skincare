@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Supplier extends Model
 {
     protected $table = 'supplier';
+    
+    public $timestamps = false;
 
     protected $fillable = [
         'nama_supplier',
